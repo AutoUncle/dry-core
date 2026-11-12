@@ -28,10 +28,10 @@ jobs:
         type: ["Style", "Layout", "Naming", "Lint", "Metrics", "Security"]
     steps:
     - name: Clone
-      uses: actions/checkout@v2
+      uses: actions/checkout@0717577d45739eb3c851188b29f50ed6c0b2194e # v2
     - name: Get git diff
       id: get_diff
-      uses: technote-space/get-diff-action@v4
+      uses: technote-space/get-diff-action@623b016c454ae55181c010cb611bd5d7028102c9 # v4
       with:
         PATTERNS: |
           **/*.rb
@@ -39,7 +39,7 @@ jobs:
           Gemfile
           Rakefile
     - name: Check ${{ matrix.type }}
-      uses: action-hero/actions/rubocop@main
+      uses: action-hero/actions/rubocop@1b538a3b7a21d6a2158ef9bdb4226b0ca956140a # main
       if: ${{ env.GIT_DIFF != '' }}
       with:
         diff: ${{ env.GIT_DIFF }}

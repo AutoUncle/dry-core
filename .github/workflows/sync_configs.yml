@@ -17,9 +17,9 @@ jobs:
       GITHUB_TOKEN: ${{ secrets.GH_PAT }}
     steps:
       - name: Checkout ${{github.repository}}
-        uses: actions/checkout@v2
+        uses: actions/checkout@0717577d45739eb3c851188b29f50ed6c0b2194e # v2
       - name: Checkout devtools
-        uses: actions/checkout@v2
+        uses: actions/checkout@0717577d45739eb3c851188b29f50ed6c0b2194e # v2
         with:
           repository: dry-rb/devtools
           path: tmp/devtools
@@ -28,7 +28,7 @@ jobs:
           git config --local user.email "dry-bot@dry-rb.org"
           git config --local user.name "dry-bot"
       - name: Set up Ruby
-        uses: actions/setup-ruby@v1
+        uses: actions/setup-ruby@e932e7af67fc4a8fc77bd86b744acd4e42fe3543 # v1
         with:
           ruby-version: "2.7"
       - name: Install dependencies
